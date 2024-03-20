@@ -45,7 +45,7 @@ int solution(vector<string> friends, vector<string> gifts) {
         }
     }
     for(int i=0;i<friends.size();i++){
-        for(int j=0;j<friends.size();j++){
+        for(int j=i+1;j<friends.size();j++){
             if(arr[i][j] != arr[j][i] ){
                 if(arr[i][j]>arr[j][i]) crr[i]++;
                 else crr[j]++;
@@ -59,5 +59,5 @@ int solution(vector<string> friends, vector<string> gifts) {
     for(int i=0;i<friends.size();i++){
         answer=max(crr[i],answer);
     }
-    return answer/2;
+    return answer;
 }
