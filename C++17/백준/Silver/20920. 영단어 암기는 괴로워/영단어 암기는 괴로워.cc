@@ -36,21 +36,17 @@ void solve() {
     cin>>n>>m;
     string s;
     vector<string> vs;
+    vector<pair<string,int>> vvs;
     set<string> st;
     while(n--){
 
         cin>>s;
 
         if(s.size()<m) continue;
-        if(umap.find(s)!=umap.end()){
-            umap[s]++;
-            continue;
-        }
-
-        umap[s]=0;
-        vs.push_back(s);
+        umap[s]++;
     }
-
+    for(auto k : umap) vvs.push_back(k);
+    for(auto k : vvs) vs.push_back(k.first);
     sort(vs.begin(),vs.end(),cmp);
     for(auto k : vs) cout<< k <<'\n';
 }
