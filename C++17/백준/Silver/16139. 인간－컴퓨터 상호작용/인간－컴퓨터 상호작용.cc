@@ -21,13 +21,13 @@ ll mod = 1000000007;
 ll n, m, cc;
 ll a,b,x,y,z;
 vector<ll> arr;
+int brr[26][400001]={0,};
 
 void solve() {
     string s;
     cin>>s;
 
     cin>>n;
-    int brr[26][2001]={0,};
     int ind=0;
     for(auto k : s){
         if(ind>0)brr[k-'a'][ind]=brr[k-'a'][ind-1]+1;
