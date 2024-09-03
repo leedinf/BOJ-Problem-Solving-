@@ -31,7 +31,7 @@ void solve() {
             w[i][0][j]=1;
         }
     }
-    int z=3;
+    int z=1;
     while(z--){
     for(int i=1;i<21;i++){
         for(int j=1;j<21;j++){
