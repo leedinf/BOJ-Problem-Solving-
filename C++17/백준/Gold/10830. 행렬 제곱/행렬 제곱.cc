@@ -17,7 +17,7 @@ void p(const vector<vector<int>>& v) {
 }
 
 // 행렬 곱셈 함수
-vector<vector<int>> mul(const vector<vector<int>>& a, const vector<vector<int>>& b) {
+vector<vector<int>> mul(const vector<vector<int>> a, const vector<vector<int>> b) {
     vector<vector<int>> v(Size, vector<int>(Size, 0));
     for (int i = 0; i < Size; i++) {
         for (int j = 0; j < Size; j++) {
