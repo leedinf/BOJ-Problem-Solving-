@@ -40,13 +40,16 @@ vector<vector<int>> wornl(vector<vector<int>> h, ll n) {
         }
         return h;
     }
-    if (n % 2 == 0) {
-        vector<vector<int>> arr = wornl(h, n / 2);
-        return mul(arr, arr);
-    } else {
-        vector<vector<int>> arr = wornl(h, n / 2);
-        return mul(mul(arr, arr), h);
-    }
+    vector<vector<int>> arr;
+if (n % 2 == 0) {
+    arr = wornl(h, n / 2);
+    arr = mul(arr, arr);
+} else {
+    arr = wornl(h, n / 2);
+    arr = mul(mul(arr, arr), h);
+}
+return arr;
+
 }
 
 void solve() {
