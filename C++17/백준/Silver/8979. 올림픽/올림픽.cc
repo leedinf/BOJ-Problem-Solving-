@@ -34,19 +34,17 @@ bool cmp(A a, A b){
     if(a.a > b.a){
         return true;
     }
-    if(a.a == b.a){
+    else if(a.a == b.a){
         if(a.b > b.b){
             return true;
         }
-        if(a.b == b.b){
+        else if(a.b == b.b){
             if(a.c > b.c){
                 return true;
             }
-            else return false;
         }
-        else return false;
     }
-    if(a.a < b.a) return false;
+    return false;
 }
 void solve() {
     cin>>n >> m;
@@ -61,14 +59,18 @@ void solve() {
 
     arr[0].rank = 1;
     int idx=0;
-    for(int i=0;i<n-1;i++){
-        // cout<<arr[i].a<<' '<<arr[i].b<<' '<<arr[i].c<<'\n';
+    for(int i=0;i<n;i++){
         if(m==arr[i].num) idx = i;
+    }
+    for(int i=0;i<n-1;i++){
         if(cmp(arr[i],arr[i+1])){
             arr[i+1].rank = arr[i].rank+1;
         }
         else arr[i+1].rank = arr[i].rank;
     }
+    // for(int i=0;i<n;i++){
+    //     // cout<<arr[i].rank<<' '<<arr[i].num<<' '<<' '<<arr[i].a<<' '<<arr[i].b<<' '<<arr[i].c<<'\n';
+    // }
 
     cout<<arr[idx].rank;
 }
