@@ -64,14 +64,13 @@ void solve() {
     }
     for(int i=0;i<n-1;i++){
         if(cmp(arr[i],arr[i+1])){
-            arr[i+1].rank = arr[i].rank+1;
+            arr[i+1].rank = i+2;
         }
         else arr[i+1].rank = arr[i].rank;
     }
-    // for(int i=0;i<n;i++){
-    //     // cout<<arr[i].rank<<' '<<arr[i].num<<' '<<' '<<arr[i].a<<' '<<arr[i].b<<' '<<arr[i].c<<'\n';
-    // }
-
+    for(int i=0;i<n;i++){
+        // cout<<arr[i].rank<<' '<<arr[i].num<<' '<<' '<<arr[i].a<<' '<<arr[i].b<<' '<<arr[i].c<<'\n';
+    }
     cout<<arr[idx].rank;
 }
 int main() {
